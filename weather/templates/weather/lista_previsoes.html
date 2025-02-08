@@ -1,0 +1,31 @@
+{% extends "aula_django/home.html" %}
+
+{% block content %}
+    <div class="container text-center">
+        <h2>Previsões Efetuadas</h2>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Cidade</th>
+                <th>Data</th>
+                <th>Temp. Máx</th>
+                <th>Temp. Mín</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for previsao in previsoes %}
+                <tr>
+                    <td>{{ previsao.cidade }}</td>
+                    <td>{{ previsao.data }}</td>
+                    <td>{{ previsao.temp_max }}</td>
+                    <td>{{ previsao.temp_min }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="container text-center">
+        <a href="{% url 'weather:previsao_exportar' %}" class="btn btn-dark">Download das previsoes como .CSV</a>
+    </div>
+{% endblock %}

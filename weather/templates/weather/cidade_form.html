@@ -1,0 +1,12 @@
+{% extends "aula_django/home.html" %}
+
+{% block content %}
+
+<h2>Criar Nova Cidade</h2>
+<hr>
+<form method="post">{% csrf_token %}
+    {{ form.as_div }}
+    <input type="submit" value="Criar Nova Cidade">
+</form>
+
+{% endblock %}

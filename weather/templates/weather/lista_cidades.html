@@ -23,7 +23,7 @@
                     <td>{{ cidade.pais }}</td>
                     <td>{{ cidade.lat }}</td>
                     <td>{{ cidade.long }}</td>
-                    <td><a href="#" class="btn btn-success btn-sm">Ver previsão</a></td>
+                    <td><a href="{% url 'weather:previsao' cidade.pk %}" class="btn btn-success btn-sm">Ver previsão</a></td>
                 </tr>
             {% endfor %}
         </tbody>

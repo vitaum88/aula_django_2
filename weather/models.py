@@ -17,3 +17,6 @@ class Previsao(models.Model):
     data = models.DateField()
     temp_max = models.FloatField()
     temp_min = models.FloatField()
+
+    def __str__(self):
+        return f"{self.cidade} - {self.data}"
