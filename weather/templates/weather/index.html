@@ -1,0 +1,10 @@
+{% extends "aula_django/home.html" %}
+
+{% block content %}
+    <p><i>Escolha uma cidade para verificar a previsão</i></p>
+    <ul>
+        {% for cidade in cidades %}
+            <li>{{ cidade.nome }} - {{ cidade.estado }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
